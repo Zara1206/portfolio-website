@@ -1,7 +1,7 @@
 body {
     font-family: Arial, sans-serif;
     margin: 0;
-    background-color: #D0CDD7;
+    background-color: #3DFAFF;
 }
 
 header {
@@ -22,7 +22,7 @@ nav a {
     font-weight: bold;
 }
 
-nav a hover {
+nav a:hover {
     text-decoration: underline;
     color: #3DFAFF;
 }
@@ -33,19 +33,69 @@ main {
     margin: auto;
 }
 
-.project {
-    background-color: #1481BA;
-    padding: 15px;
-    margin-bottom: 15px;
-    border-radius: 5px;
+/* Project Cards Layout */
+.project-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 20px;
 }
 
+.project-card {
+    background-color: #1481BA;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    display: flex;
+    align-items: flex-start;
+    padding: 16px;
+    width: 100%;
+    max-width: 370px;
+    min-width: 250px;
+    gap: 16px;
+}
+
+.project-image img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 6px;
+    background: #fff;
+    border: 2px solid #fff;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.07);
+}
+
+.project-content h3 {
+    margin-top: 0;
+    margin-bottom: 8px;
+    color: #fff;
+}
+
+.project-content p {
+    margin: 0;
+    color: #e0f7fa;
+}
+
+@media (max-width: 900px) {
+    .project-cards {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .project-card {
+        max-width: 100%;
+    }
+}
 footer {
     background-color: #333;
     color: white;
     text-align: center;
     padding: 10px;
     margin-top: 20px;
+}
+
+.bordered-section {
+    border: 5px solid #1481BA;
+    padding: 10px;
+    margin: 20px 0;
 }
 
 @media (max-width: 768px) {
