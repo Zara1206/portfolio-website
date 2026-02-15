@@ -33,7 +33,6 @@ main {
     margin: auto;
 }
 
-/* Project Cards Layout */
 .project-cards {
     display: flex;
     flex-wrap: wrap;
@@ -82,6 +81,113 @@ main {
     }
     .project-card {
         max-width: 100%;
+    }
+}
+
+/* Home row: bordered list and right-side image */
+.home-row {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    margin-top: 20px;
+}
+
+.bordered-section {
+    border: 5px solid #1481BA;
+    /* reduce right-side inner space so the border hugs content more closely */
+    padding: 10px 0 10px 10px;
+    margin: 0;
+    box-sizing: border-box;
+    flex: 0 0 58%;
+    background: rgba(20,129,186,0.05);
+}
+
+.bordered-section ul {
+    margin: 0;
+    padding-left: 20px;
+}
+
+.bordered-section p {
+    margin: 0;
+}
+
+.home-image {
+    flex: 1 1 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.home-image img {
+    width: 360px;
+    height: 240px;
+    border-radius: 8px;
+    object-fit: cover;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+}
+
+/* About page layout improvements */
+.about-row {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    margin-top: 10px;
+}
+
+.about-content {
+    flex: 1 1 60%;
+}
+
+.about-content p {
+    margin: 0 0 0 0;
+}
+
+.about-bottom-row {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    margin-top: 20px;
+}
+
+.about-left-content {
+    flex: 1 1 65%;
+}
+
+.about-images {
+    flex: 0 0 200px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-start;
+}
+
+.about-images img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+@media (max-width: 768px) {
+    .home-row, .about-row {
+        flex-direction: column;
+    }
+    .bordered-section {
+        flex: none;
+        width: 100%;
+    }
+    .home-image {
+        order: 2;
+    }
+    .about-images {
+        flex-direction: row;
+        gap: 10px;
+        justify-content: center;
+    }
+    .about-images img {
+        height: 100px;
+        width: 100px;
     }
 }
 footer {
