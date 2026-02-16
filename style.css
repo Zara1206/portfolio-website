@@ -86,10 +86,10 @@ main {
 
 /* Home row: bordered list and right-side image */
 .home-row {
-    display: flex;
-    gap: 20px;
-    align-items: flex-start;
+    /* Use block flow so the aside can float to the right */
+    display: block;
     margin-top: 20px;
+    overflow: hidden; /* clearfix */
 }
 
 .bordered-section {
@@ -107,20 +107,39 @@ main {
     padding-left: 20px;
 }
 
-.bordered-section p {
+.home-row .home-image {
+    float: right;
+    width: 36%;
+    margin-left: 20px;
+    display: block;
+}
+
+/* Ensure the list area floats left so the image can sit to its right */
+.home-row .bordered-section {
+    float: left;
+    width: 60%;
+    box-sizing: border-box;
     margin: 0;
+    padding-right: 12px;
+}
+/* Keep the image to the right of the list; only stack on very small screens */
+@media (max-width: 768px) {
+    .home-row .bordered-section,
+    .home-row .home-image {
+        float: none;
+        width: 100%;
+        margin: 0 0 12px 0;
+        display: block;
+    }
+    .home-row {
+        overflow: visible;
+    }
 }
 
-.home-image {
-    flex: 1 1 40%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.home-image img {
-    width: 360px;
-    height: 240px;
+/* Responsive image inside the floated aside */
+.home-row .home-image img {
+    max-width: 100%;
+    height: auto;
     border-radius: 8px;
     object-fit: cover;
     box-shadow: 0 4px 12px rgba(0,0,0,0.12);
@@ -202,6 +221,14 @@ footer {
     border: 5px solid #1481BA;
     padding: 10px;
     margin: 20px 0;
+}
+
+/* Remove the bordered box on the home page but keep the right-side image */
+.home-row .bordered-section {
+    border: none;
+    background: transparent;
+    padding: 0;
+    box-shadow: none;
 }
 
 @media (max-width: 768px) {
