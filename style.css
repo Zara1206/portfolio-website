@@ -4,6 +4,16 @@ body {
     background-color: #3DFAFF;
 }
 
+/* Better sizing model to avoid overflow from padding/margins */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    min-width: 0;
+}
+
 header {
     background-color: #333;
     color: white;
@@ -49,7 +59,7 @@ main {
     padding: 16px;
     width: 100%;
     max-width: 370px;
-    min-width: 250px;
+    min-width: 0;
     gap: 16px;
 }
 
@@ -102,6 +112,7 @@ main {
     /* puts text and image side by side */
     align-items: flex-start;
     /* aligns them at the top */
+    flex-wrap: wrap;
     gap: 20px;
     /* space between text and image */
     background-color: #1481BA;
@@ -115,8 +126,8 @@ main {
 .text {
     flex: 1;
     /* text takes up remaining space */
+    min-width: 0;
 }
-
 .image img {
     max-width: 200px;
     /* controls image size */
@@ -125,9 +136,40 @@ main {
     /* optional: rounds the image corners */
 }
 
+.image {
+    flex: 0 0 200px;
+    max-width: 200px;
+}
+
+/* Make all images scale down to their container to avoid overflow */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
 
 @media (max-width: 768px) {
-    /* Removed unused .about-images styles (not used in HTML files) */
+    /* Stack containers and scale images on small screens to avoid horizontal scroll */
+    .container {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .image {
+        flex: 0 0 auto;
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .image img {
+        width: 100%;
+        height: auto;
+    }
+
+    .text {
+        min-width: 0;
+    }
 }
 
 footer {
