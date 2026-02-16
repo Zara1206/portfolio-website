@@ -113,19 +113,6 @@ main {
     }
 }
 
-/* About page layout: two-column section */
-.about-bottom-row {
-    display: flex;
-    gap: 20px;
-    align-items: flex-start;
-    margin-top: 20px;
-}
-
-/* Left content column inside about page */
-.about-left-content {
-    flex: 1 1 65%;
-}
-
 /* Skills container: blue background, text + image layout */
 .container {
     display: flex;
