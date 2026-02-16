@@ -96,54 +96,38 @@ main {
     flex: 1 1 65%;
 }
 
-.about-images {
-    flex: 0 0 200px;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    align-items: flex-start;
-}
-
-.about-images img {
-    width: 100%;
-    height: 150px;
-    object-fit: cover;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-}
 
 .container {
-  display: flex;                /* puts text and image side by side */
-  align-items: flex-start;      /* aligns them at the top */
-  gap: 20px;                    /* space between text and image */
-  background-color: #1481BA;   /* the colored background for the whole section */
-  padding: 20px;                /* space inside the box */
-  border-radius: 10px;          /* optional: rounded corners */
+    display: flex;
+    /* puts text and image side by side */
+    align-items: flex-start;
+    /* aligns them at the top */
+    gap: 20px;
+    /* space between text and image */
+    background-color: #1481BA;
+    /* the colored background for the whole section */
+    padding: 20px;
+    /* space inside the box */
+    border-radius: 10px;
+    /* optional: rounded corners */
 }
 
 .text {
-  flex: 1;                      /* text takes up remaining space */
+    flex: 1;
+    /* text takes up remaining space */
 }
 
 .image img {
-  max-width: 200px;             /* controls image size */
-  height: auto;
-  border-radius: 8px;           /* optional: rounds the image corners */
+    max-width: 200px;
+    /* controls image size */
+    height: auto;
+    border-radius: 8px;
+    /* optional: rounds the image corners */
 }
 
 
-
 @media (max-width: 768px) {
-    .about-images {
-        flex-direction: row;
-        gap: 10px;
-        justify-content: center;
-    }
-
-    .about-images img {
-        height: 100px;
-        width: 100px;
-    }
+    /* Removed unused .about-images styles (not used in HTML files) */
 }
 
 footer {
