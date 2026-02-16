@@ -1,5 +1,5 @@
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', 'Inter', sans-serif;
     margin: 0;
     background-color: #3DFAFF;
 }
@@ -43,7 +43,7 @@ main {
 .project-card {
     background-color: #1481BA;
     border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
     display: flex;
     align-items: flex-start;
     padding: 16px;
@@ -60,7 +60,7 @@ main {
     border-radius: 6px;
     background: #fff;
     border: 2px solid #fff;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.07);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.07);
 }
 
 .project-content h3 {
@@ -79,86 +79,10 @@ main {
         flex-direction: column;
         gap: 15px;
     }
+
     .project-card {
         max-width: 100%;
     }
-}
-
-/* Home row: bordered list and right-side image */
-.home-row {
-    /* Use block flow so the aside can float to the right */
-    display: block;
-    margin-top: 20px;
-    overflow: hidden; /* clearfix */
-}
-
-.bordered-section {
-    border: 5px solid #1481BA;
-    /* reduce right-side inner space so the border hugs content more closely */
-    padding: 10px 0 10px 10px;
-    margin: 0;
-    box-sizing: border-box;
-    flex: 0 0 58%;
-    background: rgba(20,129,186,0.05);
-}
-
-.bordered-section ul {
-    margin: 0;
-    padding-left: 20px;
-}
-
-.home-row .home-image {
-    float: right;
-    width: 36%;
-    margin-left: 20px;
-    display: block;
-}
-
-/* Ensure the list area floats left so the image can sit to its right */
-.home-row .bordered-section {
-    float: left;
-    width: 60%;
-    box-sizing: border-box;
-    margin: 0;
-    padding-right: 12px;
-}
-/* Keep the image to the right of the list; only stack on very small screens */
-@media (max-width: 768px) {
-    .home-row .bordered-section,
-    .home-row .home-image {
-        float: none;
-        width: 100%;
-        margin: 0 0 12px 0;
-        display: block;
-    }
-    .home-row {
-        overflow: visible;
-    }
-}
-
-/* Responsive image inside the floated aside */
-.home-row .home-image img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-    object-fit: cover;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
-}
-
-/* About page layout improvements */
-.about-row {
-    display: flex;
-    gap: 20px;
-    align-items: flex-start;
-    margin-top: 10px;
-}
-
-.about-content {
-    flex: 1 1 60%;
-}
-
-.about-content p {
-    margin: 0 0 0 0;
 }
 
 .about-bottom-row {
@@ -185,50 +109,49 @@ main {
     height: 150px;
     object-fit: cover;
     border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
+.container {
+  display: flex;                /* puts text and image side by side */
+  align-items: flex-start;      /* aligns them at the top */
+  gap: 20px;                    /* space between text and image */
+  background-color: #1481BA;   /* the colored background for the whole section */
+  padding: 20px;                /* space inside the box */
+  border-radius: 10px;          /* optional: rounded corners */
+}
+
+.text {
+  flex: 1;                      /* text takes up remaining space */
+}
+
+.image img {
+  max-width: 200px;             /* controls image size */
+  height: auto;
+  border-radius: 8px;           /* optional: rounds the image corners */
+}
+
+
+
 @media (max-width: 768px) {
-    .home-row, .about-row {
-        flex-direction: column;
-    }
-    .bordered-section {
-        flex: none;
-        width: 100%;
-    }
-    .home-image {
-        order: 2;
-    }
     .about-images {
         flex-direction: row;
         gap: 10px;
         justify-content: center;
     }
+
     .about-images img {
         height: 100px;
         width: 100px;
     }
 }
+
 footer {
     background-color: #333;
     color: white;
     text-align: center;
     padding: 10px;
     margin-top: 20px;
-}
-
-.bordered-section {
-    border: 5px solid #1481BA;
-    padding: 10px;
-    margin: 20px 0;
-}
-
-/* Remove the bordered box on the home page but keep the right-side image */
-.home-row .bordered-section {
-    border: none;
-    background: transparent;
-    padding: 0;
-    box-shadow: none;
 }
 
 @media (max-width: 768px) {
