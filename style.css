@@ -4,6 +4,7 @@ body {
     background-color: #3DFAFF;
 }
 
+        /* Site header and navigation styles */
 /* Better sizing model to avoid overflow from padding/margins */
 *, *::before, *::after {
     box-sizing: border-box;
@@ -17,6 +18,7 @@ html, body {
 header {
     background-color: #333;
     color: white;
+        /* Project cards layout: flexible grid of cards */
     padding: 20px;
     text-align: center;
 }
@@ -31,6 +33,7 @@ nav a {
     margin: 0 15px;
     font-weight: bold;
 }
+        /* Left content column inside about page */
 
 nav a:hover {
     text-decoration: underline;
