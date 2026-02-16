@@ -1,10 +1,10 @@
+/* Global body styles: font family, reset margins, cyan background */
 body {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', 'Inter', sans-serif;
     margin: 0;
     background-color: #3DFAFF;
 }
 
-        /* Site header and navigation styles */
 /* Better sizing model to avoid overflow from padding/margins */
 *, *::before, *::after {
     box-sizing: border-box;
@@ -15,14 +15,16 @@ html, body {
     min-width: 0;
 }
 
+/* Header with dark background and white text */
+
 header {
     background-color: #333;
     color: white;
-        /* Project cards layout: flexible grid of cards */
     padding: 20px;
     text-align: center;
 }
 
+/* Navigation styling: horizontal layout with spacing */
 nav {
     margin-top: 10px;
 }
@@ -33,19 +35,20 @@ nav a {
     margin: 0 15px;
     font-weight: bold;
 }
-        /* Left content column inside about page */
 
 nav a:hover {
     text-decoration: underline;
     color: #3DFAFF;
 }
 
+/* Main content area: centered with max width constraint */
 main {
     padding: 20px;
     max-width: 900px;
     margin: auto;
 }
 
+/* Portfolio project cards layout: flexible grid of cards */
 .project-cards {
     display: flex;
     flex-wrap: wrap;
@@ -53,6 +56,7 @@ main {
     margin-top: 20px;
 }
 
+/* Individual project card: blue background with shadow */
 .project-card {
     background-color: #1481BA;
     border-radius: 8px;
@@ -86,6 +90,7 @@ main {
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.07);
 }
 
+/* Project card headings and text: light colors for contrast */
 .project-content h3 {
     margin-top: 0;
     margin-bottom: 8px;
@@ -108,6 +113,7 @@ main {
     }
 }
 
+/* About page layout: two-column section */
 .about-bottom-row {
     display: flex;
     gap: 20px;
@@ -115,46 +121,53 @@ main {
     margin-top: 20px;
 }
 
+/* Left content column inside about page */
 .about-left-content {
     flex: 1 1 65%;
 }
 
-
+/* Skills container: blue background, text + image layout */
 .container {
     display: flex;
-    /* puts text and image side by side */
     align-items: flex-start;
-    /* aligns them at the top */
     flex-wrap: wrap;
     gap: 20px;
-    /* space between text and image */
     background-color: #1481BA;
-    /* the colored background for the whole section */
     padding: 20px;
-    /* space inside the box */
     border-radius: 10px;
-    /* optional: rounded corners */
 }
 
+/* Text content inside skills container: flex to take remaining space, white text */
 .text {
     flex: 1;
-    /* text takes up remaining space */
     min-width: 0;
-}
-.image img {
-    max-width: 200px;
-    /* controls image size */
-    height: auto;
-    border-radius: 8px;
-    /* optional: rounds the image corners */
+    color: white;
 }
 
+/* Headings and lists inside text: ensure white color */
+.text h2 {
+    color: white;
+}
+
+.text ul,
+.text li {
+    color: white;
+}
+
+/* Image styling: max-width constraint and rounded corners */
+.image img {
+    max-width: 200px;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Image container: fixed size flex item */
 .image {
     flex: 0 0 200px;
     max-width: 200px;
 }
 
-/* Make all images scale down to their container to avoid overflow */
+/* Global image rule: ensure images fit containers and don't overflow */
 img {
     max-width: 100%;
     height: auto;
@@ -185,6 +198,7 @@ img {
     }
 }
 
+/* Footer: dark background matching header */
 footer {
     background-color: #333;
     color: white;
@@ -194,6 +208,7 @@ footer {
 }
 
 @media (max-width: 768px) {
+    /* Mobile: stack nav vertically and reduce main padding */
     nav {
         display: flex;
         flex-direction: column;
